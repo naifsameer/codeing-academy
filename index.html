@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        font-family: helvetica, arial, sans-serif;
+        letter-spacing: 1px;
+        padding-top: 10px;
+      }
+
+      body {
+        min-height: 4000px;
+        text-align: center;
+      }
+
+      hr {
+        margin: 5em 0;
+      }
+
+      select {
+        text-align: center;
+        padding: 0.7em;
+        border-radius: 5px;
+        background: #2563eb;
+        color: white;
+        font-size: 1rem;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: auto;
+      }
+
+      .col-6 {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <!----------------------------------------------------------------------->
+    <!-------------------------------  box model ---------------------------->
+    <!----------------------------------------------------------------------->
+    <style>
+      .box-container {
+        min-height: 500px;
+        border: 2px dotted gray;
+      }
+
+      .box {
+        border: 50px solid #009900;
+        width: 200px;
+        height: 100px;
+        margin: 2em auto;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .box__child {
+        font-size: 22px;
+        font-weight: bold;
+        color: #064e3b;
+        background-color: #c5c5db;
+      }
+
+      .box-inputs label {
+        width: 150px;
+        display: block;
+        position: relative;
+        padding: 1em;
+      }
+
+      .box-inputs input {
+        width: 40px;
+        padding: 0.4em;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+      }
+    </style>
+
+    <div class="box-container">
+      <h2 style="text-align: center">box CSS Box-Model Property</h2>
+
+      <div class="row">
+        <div style="width: 60%">
+          <div class="box">
+            <div class="box__child">This is test text</div>
+          </div>
+        </div>
+
+        <div style="width: 40%" class="box-inputs">
+          <label for="js-padding">
+            padding:
+            <input value="20" name="padding" type="number" id="js-padding" />
+          </label>
+
+          <label for="js-border">
+            border:
+            <input value="20" name="border" type="number" id="js-border" />
+          </label>
+
+          <label for="js-margin">
+            margin:
+            <input value="20" name="margin" type="number" id="js-margin" />
+          </label>
+
+          <label for="js-width">
+            width:
+            <input value="200" name="width" type="number" id="js-width" />
+          </label>
+
+          <label for="js-height">
+            height:
+            <input value="100" name="height" type="number" id="js-height" />
+          </label>
+
+          <label for="js-box-sizing" style="width: 240px">
+            box-sizing:
+
+            <select name="box-sizing" id="js-box-sizing">
+              <option value="content-box">content-box</option>
+              <option value="border-box">border-box</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!----------------------------------------------------------------------->
+    <!----------------------------------------------------------------------->
+    <!----------------------------------------------------------------------->
+    <!----------------------------- css display  ---------------------------->
+    <!----------------------------------------------------------------------->
+    <!----------------------------------------------------------------------->
+    <!----------------------------------------------------------------------->
+    <div>
+      <style>
+        .display-items {
+          background-color: #eee;
+          padding: 2em;
+          min-height: 300px;
+          box-sizing: border-box;
+        }
+
+        .display article {
+          background-color: #10b981;
+        }
+
+        .display article span {
+          background-color: #047857;
+          color: white;
+          margin: 0.5em;
+        }
+
+        .display article,
+        .display span {
+          padding: 10px;
+          border-radius: 7px;
+        }
+      </style>
+
+      <div class="display row">
+        <h2 style="width: 100%; text-align: center">Css display</h2>
+
+        <div class="display-items" style="width: 65%">
+          <article class="container">
+            <span>First</span>
+            <span>Second</span>
+            <span>Third</span>
+          </article>
+
+          <!-- only show when the select value inline-flex or inline-grid -->
+          <article class="container">
+            <span>First</span>
+            <span>Second</span>
+            <span>Third</span>
+          </article>
+        </div>
+
+        <div
+          style="
+            width: fit-content;
+            height: 300px;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+          "
+          class="row"
+        >
+          <label style="width: 100%; margin-bottom: 2em" for="display"
+            >Choose a display value:</label
+          >
+          <select id="display">
+            <option selected>block</option>
+            <option>inline</option>
+            <option>inline-block</option>
+            <option>none</option>
+            <option>flex</option>
+            <option>inline-flex</option>
+            <option>grid</option>
+            <option>inline-grid</option>
+          </select>
+        </div>
+      </div>
+
+      <hr />
+    </div>
+
+    <!----------------------------------------------------------------------->
+    <!----------------------------------------------------------------------->
+    <!----------------------------------------------------------------------->
+    <!--------------------------- css position  ----------------------------->
+    <!----------------------------------------------------------------------->
+    <!----------------------------------------------------------------------->
+    <!----------------------------------------------------------------------->
+    <div>
+      <style>
+        .parent {
+          margin-left: auto;
+          margin-right: auto;
+          width: 200px;
+          height: 200px;
+          background-color: #10b981;
+        }
+
+        .child {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100px;
+          height: 100px;
+          background-color: #db2777;
+          color: white;
+        }
+
+        .relative {
+          position: relative;
+        }
+
+        .absolute {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+        }
+
+        .sticky-container {
+          min-height: 1000px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .sticky {
+          position: sticky;
+          top: 0;
+          height: 20px;
+          width: 100%;
+        }
+      </style>
+
+      <div style="text-align: center">
+        <h2>css position</h2>
+
+        <!-- position static -->
+
+        <h3>static</h3>
+        <div class="parent">
+          <div class="child"></div>
+        </div>
+
+        <hr />
+
+        <!-- position absolute and relative -->
+
+        <h3>absolute and relative</h3>
+
+        <div class="parent relative">
+          <div class="child absolute"></div>
+        </div>
+
+        <hr />
+
+        <!-- position sticky -->
+
+        <h3>sticky</h3>
+
+        <div class="parent sticky-container relative">
+          <div class="child sticky">A</div>
+          <div>Ahmed</div>
+          <div>Ali</div>
+          <div>Ahed</div>
+
+          <div style="background-color: purple" class="child sticky">E</div>
+          <div>Enas</div>
+          <div>Eman</div>
+
+          <div style="background-color: #7f1d1d" class="child sticky">L</div>
+          <div>Lion 1</div>
+          <div>Lion 2</div>
+          <div>Lion 3</div>
+          <div>Lion 4</div>
+          <div>Lion 5</div>
+
+          <div style="background-color: #1e3a8a" class="child sticky">N</div>
+          <div>Naif 1</div>
+          <div>Naif 2</div>
+          <div>Naif 3</div>
+          <div>Naif 4</div>
+          <div>Naif 5</div>
+          <div>Naif 6</div>
+          <div>Naif 7</div>
+          <div>Naif 8</div>
+          <div>Naif 9</div>
+          <div>Naif 10</div>
+          <div>Naif 11</div>
+          <div>Naif 12</div>
+          <div>Naif 13</div>
+          <div>Naif 14</div>
+          <div>Naif 15</div>
+          <div>Naif 16</div>
+          <div>Naif 17</div>
+          <div>Naif 18</div>
+          <div>Naif 19</div>
+          <div>Naif 20</div>
+        </div>
+      </div>
+    </div>
+
+    <!----------------------------------------------------------------------->
+    <!----------------------------------------------------------------------->
+    <!----------------------------------------------------------------------->
+    <!--------------------------- Naif section  ----------------------------->
+    <!----------------------------------------------------------------------->
+    <!----------------------------------------------------------------------->
+    <!----------------------------------------------------------------------->
+
+    <div class="naif">
+      <h3 style="margin-bottom: 3em;">position example</h3>
+
+      <style>
+        .naif {
+          width: 700px;
+          border: 2px dotted firebrick;
+          margin: 10em auto 0;
+          min-height: 500px;
+          padding: 2em;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .online {
+          position: relative;
+          width: 200px;
+          height: 200px;
+          margin-left: 1em;
+          display: inline-block;
+        }
+
+        .online img {
+          border-radius: 50%;
+        }
+
+        .online-dot {
+          background: #059669;
+          position: absolute;
+          top: 15px;
+          right: 15px;
+
+          --size: 30px;
+          width: var(--size);
+          height: var(--size);
+
+          border-radius: 50%;
+          box-shadow: 0 0 0 8px white;
+        }
+
+        .offline .online-dot {
+          background: #dc2626;
+        }
+      </style>
+
+      <div class="online">
+        <img src="sheep.jpg" alt="sheep image" />
+        <div class="online-dot"></div>
+      </div>
+      <div class="online offline">
+        <img src="dog.jpg" alt="sheep image" />
+        <div class="online-dot"></div>
+      </div>
+
+      <hr />
+      <h3>z-index example</h3>
+
+      <style>
+        .overlay-text {
+          position: relative;
+          width: 300px;
+          height: 300px;
+          padding: 1em;
+          box-sizing: border-box;
+          margin-left: 2em;
+          display: inline-block;
+        }
+
+        .overlay-text img {
+          top: 0px;
+          left: 0;
+          z-index: 0;
+        }
+
+        .overlay-text h4 {
+          z-index: 2;
+          color: white;
+        }
+
+        .overlay-text::after {
+          content: '';
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          width: 100%;
+          height: 100%;
+          background-image: linear-gradient(45deg, #991b1bc7, #05966996);
+          z-index: 1;
+        }
+      </style>
+      <div class="overlay-text">
+        <img class="absolute" src="sheep.jpg" alt="sheep image" />
+        <h4 class="relative">text here for sheep store</h4>
+      </div>
+      <div class="overlay-text">
+        <img class="absolute" src="dog.jpg" alt="dog image" />
+        <h4 class="relative">text here for sheep store</h4>
+      </div>
+    </div>
+
+    <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+    <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+    <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+    <!--xxxxxxxxxxxxxxxxxxxxxxxxxx go away from here xxxxxxxxxxxxxxxxxxxxxxxxx-->
+    <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+    <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+    <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+    <script>
+      function box() {
+        const el = (element) => document.querySelector(element);
+        const elAll = (element) => document.querySelectorAll(element);
+
+        const box = el('.box');
+        const select = el('#js-box-sizing');
+        const inputs = elAll('input');
+
+        function updateDisplay() {
+          box.style.boxSizing = select.value;
+
+          inputs.forEach((input) => {
+            box.style[input.name] = input.value + 'px';
+
+            if (input.name === 'border') {
+              box.style[input.name] = input.value + 'px solid green';
+            }
+          });
+        }
+
+        select.addEventListener('change', updateDisplay);
+
+        inputs.forEach((input) => (input.oninput = updateDisplay));
+
+        updateDisplay();
+      }
+      box();
+
+      function displayValue() {
+        const articles = document.querySelectorAll('.container');
+        const select = document.querySelector('#display');
+
+        function updateDisplay() {
+          const value = select.value;
+          articles[0].style.display = value;
+
+          if (value === 'inline-flex' || value === 'inline-grid') {
+            articles[1].style.display = value;
+          } else {
+            articles[1].style.display = 'none';
+          }
+        }
+
+        select.addEventListener('change', updateDisplay);
+
+        updateDisplay();
+      }
+
+      displayValue();
+    </script>
+  </body>
+</html>
