@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find job for free</title>
+    <link rel="shortcut icon" href="img/logo.svg" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container d-flex justify-between align-center">
+        <div class="header__logo">
+          <img src="img/logo.svg" alt="website logo" />
+        </div>
+
+        <div class="d-flex justify-between align-center">
+          <nav class="nav">
+            <ul class="nav__list d-flex justify-between">
+              <li class="nav__item"><a href="#"> Home </a></li>
+
+              <li class="nav__item">
+                <a class="active" href="#"> Find a job </a>
+              </li>
+
+              <li class="nav__item"><a href="#"> Post a job </a></li>
+
+              <li class="nav__item"><a href="#"> Pages </a></li>
+
+              <li class="nav__item"><a href="#"> Blog </a></li>
+            </ul>
+          </nav>
+
+          <div class="header__login">
+            <a href="#"> Login </a>
+
+            <span>or</span>
+
+            <a href="#"> Register</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div class="hero__content">
+        <div class="container">
+          <h1 class="hero__title text-center">Find a Job</h1>
+
+          <p class="hero__desc text-center">Home / Find a job</p>
+        </div>
+      </div>
+
+      <form class="hero__form">
+        <div class="container">
+          <div class="d-flex">
+            <input type="text" placeholder="Keywords" />
+            <input type="text" placeholder="Location" />
+
+            <div class="choose-category-input">
+              <input type="text" placeholder="Any Category" />
+              <img src="img/arrow_drop_down.svg" alt="category dorp icon" />
+            </div>
+            <button>Find Job</button>
+          </div>
+
+          <div class="checkbox-container">
+            <div class="checkbox">
+              <input type="checkbox" name="job_type" id="job_type-1" />
+              <label for="job_type-1">Freelance</label>
+            </div>
+
+            <div class="checkbox">
+              <input type="checkbox" name="job_type" id="job_type-2" />
+              <label for="job_type-2">Full Time</label>
+            </div>
+
+            <div class="checkbox">
+              <input type="checkbox" name="job_type" id="job_type-3" />
+              <label for="job_type-3">Internship</label>
+            </div>
+
+            <div class="checkbox">
+              <input type="checkbox" name="job_type" id="job_type-4" />
+              <label for="job_type-4">Part Time</label>
+            </div>
+
+            <div class="checkbox">
+              <input type="checkbox" name="job_type" id="job_type-5" />
+              <label for="job_type-5">Temporary</label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
