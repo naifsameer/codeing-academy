@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* :lang(en) body {
+      background-color: #e91e63;  
+      }
+
+      :lang(ar) {
+        background-color: yellow;
+      } */
+
+      body {
+        background-color: var(--bg);
+      }
+
+      .container {
+        margin: 4rem auto;
+        max-width: 300px;
+      }
+
+      .slider {
+        max-height: 300px;
+        height: 100vh;
+      }
+
+      .slider-item {
+        display: none;
+        position: relative;
+        border-radius: 0.25rem;
+        overflow: hidden;
+      }
+
+      .slider-item img {
+        max-width: 100%;
+      }
+
+      .slider-item h3 {
+        background-color: #e91e63;
+        color: #fff;
+        padding: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      .slider-item.is-active {
+        display: block;
+      }
+
+      .slider-btns {
+        margin-top: 3rem;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+      }
+
+      .slider-btns button {
+        border: none;
+        padding: 0.5rem 1rem;
+        background-color: rebeccapurple;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="slider">
+        <div class="slider-item is-active">
+          <img src="1.jpg" alt="slider image" />
+          <h3>Slider item 1</h3>
+        </div>
+        <div class="slider-item">
+          <img src="2.jpg" alt="slider image" />
+          <h3>Slider item 2</h3>
+        </div>
+        <div class="slider-item">
+          <img src="3.jpg" alt="slider image" />
+          <h3>Slider item 3</h3>
+        </div>
+        <div class="slider-item">
+          <img src="4.jpg" alt="slider image" />
+          <h3>Slider item 4</h3>
+        </div>
+      </div>
+
+      <div class="slider-btns">
+        <button class="prev-btn">previews</button>
+
+        <button class="next-btn">next</button>
+      </div>
+    </div>
+
+    <script>
+      let sliders = document.querySelectorAll('.slider-item');
+      let nextBtn = document.querySelector('.next-btn');
+      let prevBtn = document.querySelector('.prev-btn');
+      let sliderIndex = 0;
+
+      function renderSlider() {
+        sliders.forEach((item, index) => {
+          if (index === sliderIndex) {
+            item.classList.add('is-active');
+          } else {
+            item.classList.remove('is-active');
+          }
+        });
+      }
+
+      nextBtn.addEventListener('click', () => {
+        sliderIndex = sliderIndex >= sliders.length - 1 ? 0 : sliderIndex + 1;
+        renderSlider();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        sliderIndex = sliderIndex <= 0 ? sliders.length - 1 : sliderIndex - 1;
+        renderSlider();
+      });
+    </script>
+  </body>
+</html>
