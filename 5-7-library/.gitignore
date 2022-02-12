@@ -1,0 +1,8 @@
+*.scss
+*.ts
+*.log
+css/index.css.map
+package.json
+node_modules/
+pnpm-lock.yaml
+.vscode/settings.json
