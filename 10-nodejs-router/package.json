@@ -1,0 +1,12 @@
+{
+  "name": "10-nodejs-router",
+  "version": "1.0.0",
+  "description": "Naif simple project pure nodejs :)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "keywords": [],
+  "author": "Naif Sameer",
+  "license": "ISC"
+}
