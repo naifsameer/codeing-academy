@@ -1223,53 +1223,6 @@
       </div>
     </footer>
 
-    <div class="remove-it-latter">
-      <style>
-        .remove-it-latter {
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          padding: 0.55rem;
-          background-color: red;
-          opacity: .5;
-        }
-        .remove-it-latter.active {
-          background-color: blue;
-        }
-      </style>
-
-      <script>
-        let count = 0;
-        let ii = document.querySelector('.remove-it-latter');
-        ii.onclick = () => {
-          if (count === 0) {
-            ii.classList.add('active');
-            count = 1;
-
-            let i = 0;
-
-            if (count === 1) {
-              document.querySelector('body').ondblclick = () => {
-                if (i === 0) {
-                  document.querySelector('.c-header-menu').style.display =
-                    'none';
-                  i = 1;
-                } else if (i === 1) {
-                  i = 0;
-                  document.querySelector('.c-header-menu').style.display =
-                    'block';
-                }
-              };
-            }
-          } else {
-            document.querySelector('body').ondblclick = null;
-            ii.classList.remove('active');
-            count = 0;
-          }
-        };
-      </script>
-    </div>
-
     <script src="js/slider.js"></script>
     <script src="js/modal.js"></script>
     <script>

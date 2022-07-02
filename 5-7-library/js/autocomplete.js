@@ -69,7 +69,7 @@ function autocomplete(inp, arr) {
       }
     }
   });
-  
+
   function addActive(x) {
     /* a function to classify an item as "active": */
     if (!x) return false;
@@ -88,7 +88,6 @@ function autocomplete(inp, arr) {
   }
 
   function closeAllLists(elmnt) {
-
     const x = document.getElementsByClassName('autocomplete-items');
     for (let i = 0; i < x.length; i++) {
       if (elmnt != x[i] && elmnt != inp) {
